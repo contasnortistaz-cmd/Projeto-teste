@@ -13,14 +13,20 @@
         }
         body {
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #fff;
             background-color: #000;
+            color: #fff;
+            line-height: 1.6;
         }
         a {
             text-decoration: none;
             color: inherit;
         }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         /* Header */
         header {
             position: fixed;
@@ -28,14 +34,13 @@
             top: 0;
             left: 0;
             background-color: #000;
-            padding: 20px 0;
+            padding: 15px 0;
             z-index: 1000;
         }
         header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
         }
         header .logo {
             font-size: 1.8rem;
@@ -52,103 +57,123 @@
             font-size: 1rem;
             font-weight: 500;
         }
+
         /* Hero Section */
         .hero {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: url('hero-image.jpg') no-repeat center center/cover;
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
             text-align: center;
-            color: #fff;
+            flex-direction: column;
+            padding-top: 60px;
         }
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
         }
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 30px;
+            max-width: 700px;
+            animation: fadeIn 1.5s ease-in-out;
         }
-        /* Sobre */
-        .sobre {
-            padding: 50px 20px;
-            background-color: #111;
-            text-align: center;
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity:1; transform: translateY(0);}
         }
-        .sobre h2 {
+
+        /* Seções */
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
+            text-align: center;
         }
-        .sobre p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+
+        p {
+            font-size: 1.1rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
         }
-        /* Nossos Números */
+
+        /* Nossos números */
         .numeros {
             display: flex;
             justify-content: space-around;
-            padding: 50px 20px;
-            background-color: #222;
+            flex-wrap: wrap;
+            gap: 30px;
+            background-color: #111;
+            padding: 60px 20px;
         }
-        .numeros div {
+        .numero-box {
             text-align: center;
+            flex: 1 1 200px;
         }
-        .numeros div h3 {
-            font-size: 2rem;
+        .numero-box h3 {
+            font-size: 2.5rem;
             margin-bottom: 10px;
+            color: #ff6b6b;
         }
-        .numeros div p {
-            font-size: 1.2rem;
+        .numero-box p {
+            font-size: 1.1rem;
         }
+
         /* Identidade Visual */
         .identidade {
-            padding: 50px 20px;
-            background-color: #111;
             text-align: center;
+            background-color: #222;
+            padding: 60px 20px;
         }
-        .identidade h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        .identidade .cores {
+        .cores {
             display: flex;
             justify-content: center;
             gap: 20px;
+            margin-top: 30px;
         }
-        .identidade .cores div {
+        .cores div {
             width: 100px;
             height: 100px;
+            border-radius: 10px;
+            border: 2px solid #fff;
         }
+
         /* Contato */
         .contato {
-            padding: 50px 20px;
-            background-color: #222;
             text-align: center;
+            background-color: #111;
+            padding: 60px 20px;
         }
-        .contato h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        .contato a {
+            color: #ff6b6b;
         }
-        .contato p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
+
         /* Footer */
         footer {
+            background-color: #000;
             padding: 20px;
-            background-color: #111;
             text-align: center;
-            color: #fff;
+            font-size: 0.9rem;
         }
+
         /* Responsividade */
         @media (max-width: 768px) {
+            header nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
             .numeros {
                 flex-direction: column;
                 align-items: center;
             }
-            .numeros div {
-                margin-bottom: 20px;
+            .cores {
+                flex-direction: column;
             }
         }
     </style>
@@ -169,34 +194,37 @@
     </header>
 
     <section class="hero">
-        <div>
-            <h1>A Voz da Geração Z na Amazônia</h1>
-            <p>Conectando cultura, entretenimento e informação com autenticidade e estilo.</p>
-        </div>
+        <h1>A Voz da Geração Z na Amazônia</h1>
+        <p>Conectando cultura, entretenimento e tecnologia com autenticidade. Fundadores disponíveis no <a href="https://www.linkedin.com/company/nortistaz" target="_blank">LinkedIn</a>.</p>
     </section>
 
-    <section id="sobre" class="sobre">
+    <section id="sobre">
         <h2>Sobre a Nortistaz</h2>
-        <p>Fundada em 29 de março de 2021 por adolescentes de 16 a 17 anos, a Nortistaz se tornou a maior editora da Geração Z na Amazônia. Com uma abordagem autêntica e inovadora, conectamos a juventude nortista com conteúdo relevante e engajador.</p>
+        <p>Fundada em 29 de março de 2021 por adolescentes de 16 a 17 anos, a Nortistaz é a maior editora da Geração Z na Amazônia, atuando também na área de tecnologia. Com presença no Instagram, Facebook e TikTok, alcançamos mais de 100 milhões de visitas em nossas redes sociais, impactando jovens em 30 países. Representações em Macapá, Belém e Pará.</p>
     </section>
 
     <section id="numeros" class="numeros">
-        <div>
-            <h3>371K</h3>
-            <p>Seguidores no Instagram</p>
+        <div class="numero-box">
+            <h3 id="insta">371K</h3>
+            <p>Instagram</p>
         </div>
-        <div>
-            <h3>1.761</h3>
-            <p>Posts realizados</p>
+        <div class="numero-box">
+            <h3 id="fb">85K</h3>
+            <p>Facebook</p>
         </div>
-        <div>
-            <h3>2021</h3>
-            <p>Ano de fundação</p>
+        <div class="numero-box">
+            <h3 id="tiktok">43K</h3>
+            <p>TikTok</p>
+        </div>
+        <div class="numero-box">
+            <h3 id="visitas">100M+</h3>
+            <p>Visitas nas redes sociais</p>
         </div>
     </section>
 
     <section id="identidade" class="identidade">
         <h2>Identidade Visual</h2>
+        <p>Paleta de cores preto e branco com estilo minimalista e moderno, voltado para a Geração Z.</p>
         <div class="cores">
             <div style="background-color: #000;"></div>
             <div style="background-color: #fff;"></div>
@@ -206,13 +234,38 @@
 
     <section id="contato" class="contato">
         <h2>Contato</h2>
-        <p>Para parcerias, colaborações ou mais informações, entre em contato conosco:</p>
-        <p>Email: contato@nortistaz.com.br</p>
+        <p>Email: <a href="mailto:nortistaz@gmail.com">nortistaz@gmail.com</a></p>
+        <p>Telefone: <a href="tel:+556984092042">+55 96 8409-2042</a></p>
         <p>Instagram: <a href="https://www.instagram.com/nortistaz/" target="_blank">@nortistaz</a></p>
+        <p>Facebook: <a href="https://www.facebook.com/nortistaz" target="_blank">@nortistaz</a></p>
+        <p>TikTok: <a href="https://www.tiktok.com/@nortistaz" target="_blank">@nortistaz</a></p>
     </section>
 
     <footer>
         <p>&copy; 2025 Nortistaz. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- JS leve para animação de números -->
+    <script>
+        function animateNumber(id, start, end, duration) {
+            let obj = document.getElementById(id);
+            let range = end - start;
+            let current = start;
+            let increment = end > start ? 1 : -1;
+            let stepTime = Math.abs(Math.floor(duration / range));
+            let timer = setInterval(function() {
+                current += increment;
+                if(current >= end && increment > 0) current = end;
+                if(current <= end && increment < 0) current = end;
+                obj.innerText = current.toLocaleString();
+                if(current == end) clearInterval(timer);
+            }, stepTime);
+        }
+
+        animateNumber("insta", 0, 371000, 2000);
+        animateNumber("fb", 0, 85000, 2000);
+        animateNumber("tiktok", 0, 43000, 2000);
+        animateNumber("visitas", 0, 100000000, 2000);
+    </script>
 </body>
 </html>
